@@ -7,6 +7,12 @@ namespace Product
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Session expires in 30 min
+                options.Cookie.HttpOnly = true;  // Secure, prevents JS access
+                options.Cookie.IsEssential = true; // Needed for GDPR compliance
+            });
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -21,7 +27,7 @@ namespace Product
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();

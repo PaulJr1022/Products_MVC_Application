@@ -15,6 +15,8 @@ namespace Product.Controllers
             new Products { Id = 3, Name = "Headphones", Description = "Noise-cancelling headphones", Price = 200, ImageUrl = "https://th.bing.com/th/id/OIP.JjcpExhYJsBDWPMpPKD_LAHaJB?w=151&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7" }
         };
 
+       
+
         // GET: /Product/Index
         public IActionResult Index()
         {

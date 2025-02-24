@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "User";
+}
+
+<h2>Welcome, @ViewBag.UserName!</h2>
+<h3>ID: @ViewBag.UserId</h3>
+<h4>Name: @ViewBag.Name</h4>
+
+<!-- Link to set session -->
+<a href="@Url.Action("SetSession", "User")">Set Session</a>
+<br />
+
+<!-- Logout button -->
+<a href="@Url.Action("Logout", "User")">Logout</a>
