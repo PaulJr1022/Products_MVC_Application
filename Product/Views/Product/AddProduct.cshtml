@@ -1,0 +1,50 @@
+﻿@model Product.Models.MyProduct
+
+@{
+    ViewData["Title"] = "Buy Product";
+}
+
+<div class="container">
+    <h2>Buy @Model.Name</h2>
+    <div class="row">
+        <!-- Product Image -->
+        <div class="col-md-6">
+            <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid" height="300" width="300" />
+        </div>
+
+        <!-- Purchase Form -->
+        <div class="col-md-6">
+            <form asp-action="BuyProduct" method="post">
+                <!-- Product Details (Read-Only) -->
+                <div class="form-group">
+                    <label asp-for="Name">Product Name</label>
+                    <input asp-for="Name" class="form-control" readonly />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price">Price</label>
+                    <input asp-for="Price" class="form-control" readonly />
+                </div>
+
+                <!-- Purchase Details -->
+                <div class="form-group">
+                    <label for="Quantity">Quantity</label>
+                    <input type="number" id="Quantity" name="Quantity" class="form-control" value="1" min="1" required />
+                </div>
+                <div class="form-group">
+                    <label for="BuyerName">Your Name</label>
+                    <input type="text" id="BuyerName" name="BuyerName" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="BuyerEmail">Your Email</label>
+                    <input type="email" id="BuyerEmail" name="BuyerEmail" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="ShippingAddress">Shipping Address</label>
+                    <textarea id="ShippingAddress" name="ShippingAddress" class="form-control" rows="3" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success">Confirm Purchase</button>
+            </form>
+        </div>
+    </div>
+</div>

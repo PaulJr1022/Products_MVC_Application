@@ -1,0 +1,61 @@
+﻿
+
+@{
+    ViewData["Title"] = "Welcome to Product Store";
+}
+
+<div class="container">
+    <!-- Hero Section -->
+    <div class="jumbotron text-center mt-4">
+        <h1 class="display-4">Welcome to Our Product Store!</h1>
+        <p class="lead">Find the best deals on the latest tech gadgets, accessories, and more.</p>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-primary btn-lg">Shop Now</a>
+        <a asp-controller="Product" asp-action="Add" class="btn btn-success btn-lg">Add Product</a>
+    </div>
+
+    <!-- Featured Products -->
+    <h2 class="text-center my-4">Featured Products</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.jRqNLekZ-LDtGZ1sFnK9RgAAAA?rs=1&pid=ImgDetMain" class="card-img-top" alt="Laptop" height="300" width="300">
+                <div class="card-body">
+                    <h5 class="card-title">Laptop</h5>
+                    <p class="card-text">High-performance laptop for work and gaming.</p>
+                    <a asp-controller="Product" asp-action="AddProduct" asp-route-id="1" class="btn btn-primary">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.JnxK244va8dmrjAE7bqGHAHaJ4?w=147&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="card-img-top" alt="Smartphone" height="300" width="300">
+                <div class="card-body">
+                    <h5 class="card-title">Smartphone</h5>
+                    <p class="card-text">Latest model smartphone with cutting-edge features.</p>
+                    <a asp-controller="Product" asp-action="AddProduct" asp-route-id="2" class="btn btn-primary">Buy Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.JjcpExhYJsBDWPMpPKD_LAHaJB?w=151&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="card-img-top" alt="Headphones" height="300" width="300">
+                <div class="card-body">
+                    <h5 class="card-title">Headphones</h5>
+                    <p class="card-text">Noise-canceling headphones with superior sound quality.</p>
+                    <a asp-controller="Product" asp-action="AddProduct" asp-route-id="3" class="btn btn-primary">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="my-5 text-center">
+        <h2>About Our Store</h2>
+        <p class="lead">We offer the best quality products at unbeatable prices. Browse our store to discover amazing deals!</p>
+    </div>
+</div>
+
+
+

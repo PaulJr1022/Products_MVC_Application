@@ -1,0 +1,29 @@
+﻿@{
+	ViewData["Title"] = "Products";
+}
+
+<div class="container">
+	<h2 class="text-center text-secondary">Add Products</h2>
+
+    <h2>Product List</h2>
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="@product.ImageUrl" alt="@product.Name" height="300" width="250">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">@product.Description</p>
+                        <p class="card-text"><strong>Price: </strong>$@product.Price</p>
+                        @* <a href="../Views/Product/AddProduct.cshtml" class="btn btn-primary">Buy Now</a> *@
+                        @* <a asp-controller="Product" asp-action="AddProduct" class="btn btn-primary">Buy Now</a> *@
+                        <a asp-controller="Product" asp-action="AddProduct" asp-route-id="@product.Id" class="btn btn-primary">Buy Now</a>
+
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
